@@ -1,6 +1,6 @@
 <?php
 
-function ideaCPT() {
+function ideaCPT(){
 
 	$labels = array(
 		'name'                  => _x( 'Ideas', 'Post Type General Name', 'AnythingMachine' ),
