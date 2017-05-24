@@ -1,6 +1,7 @@
-<?php
+<?php 
 
-function ideaCPT(){
+// Register Custom Post Type
+function ideaCustomPostType() {
 
 	$labels = array(
 		'name'                  => _x( 'Ideas', 'Post Type General Name', 'AnythingMachine' ),
@@ -13,12 +14,12 @@ function ideaCPT(){
 		'all_items'             => __( 'All Ideas', 'AnythingMachine' ),
 		'add_new_item'          => __( 'Add New Idea', 'AnythingMachine' ),
 		'add_new'               => __( 'Add New', 'AnythingMachine' ),
-		'new_item'              => __( 'New Item', 'AnythingMachine' ),
-		'edit_item'             => __( 'Edit Item', 'AnythingMachine' ),
-		'update_item'           => __( 'Update Item', 'AnythingMachine' ),
-		'view_item'             => __( 'View Item', 'AnythingMachine' ),
-		'view_items'            => __( 'View Items', 'AnythingMachine' ),
-		'search_items'          => __( 'Search Item', 'AnythingMachine' ),
+		'new_item'              => __( 'New Idea', 'AnythingMachine' ),
+		'edit_item'             => __( 'Edit Idea', 'AnythingMachine' ),
+		'update_item'           => __( 'Update Idea', 'AnythingMachine' ),
+		'view_item'             => __( 'View Idea', 'AnythingMachine' ),
+		'view_items'            => __( 'View Ideas', 'AnythingMachine' ),
+		'search_items'          => __( 'Search Idea', 'AnythingMachine' ),
 		'not_found'             => __( 'Not found', 'AnythingMachine' ),
 		'not_found_in_trash'    => __( 'Not found in Trash', 'AnythingMachine' ),
 		'featured_image'        => __( 'Featured Image', 'AnythingMachine' ),
@@ -33,9 +34,9 @@ function ideaCPT(){
 	);
 	$args = array(
 		'label'                 => __( 'Idea', 'AnythingMachine' ),
-		'description'           => __( 'An idea.', 'AnythingMachine' ),
+		'description'           => __( 'An expedition into the future', 'AnythingMachine' ),
 		'labels'                => $labels,
-		'supports'              => array( ),
+		'supports'              => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'trackbacks', 'revisions', 'custom-fields', ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -53,4 +54,4 @@ function ideaCPT(){
 	register_post_type( 'idea', $args );
 
 }
-add_action( 'init', 'ideaCPT', 0 );
+add_action( 'init', 'ideaCustomPostType', 0 );
