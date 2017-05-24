@@ -10,7 +10,7 @@ Author URI:
 
 namespace AnythingMachine;
 
-die('AnythingMachine is working!');
+//die('AnythingMachine is working!');
 
 require_once 'src/AnythingMachine/AnythingMachinePlugin.class.php';
 
