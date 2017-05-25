@@ -40,10 +40,10 @@ function whoisWatchinMe() {
 	if ( is_user_logged_in() ){
 		$current_user = wp_get_current_user();
 		$userName=  $current_user->user_login;
-		
 		wp_mail( $email, 'You had a visitor...', "A member, $userName visited!" );
 	}else{
 		wp_mail( $email, 'You had a visitor...', 'An anonymous visitor visited!' );
+	}
 }
 
 add_action( 'wp', 'whoisWatchinMe' );
