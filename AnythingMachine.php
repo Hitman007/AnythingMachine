@@ -39,17 +39,12 @@ function whoisWatchinMe() {
 	add_action('init', 'AnythingMachine\sendEmail');
 }
 
-function sendEmail(){
-	$email= "jiminac@aol.com";
-	global $wpdb;
-	$current_user = wp_get_current_user();
-	$userName =  $current_user->user_login;
-	//$userName = "Sam";
-	wp_mail( $email, 'You had a visitor...', "A member, $userName visited!" );
+function whoisWatchingMe(){
+	$email = "jiminac@aol.com";
+	wp_mail( $email, 'You had a visitor...', 'Woopty do!' );
 }
 
-//add_action( 'wp_login', 'whoisWatchinMe' );
-add_action( 'wp_login', 'AnythingMachine\sendEmail' );
+add_action( 'wp_login', 'AnythingMachine\whoisWatchingMe' );
 
 
 
