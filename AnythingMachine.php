@@ -46,4 +46,4 @@ function whoisWatchinMe() {
 	}
 }
 
-add_action( 'wp', 'whoisWatchinMe' );
+add_action( 'wp_login', 'whoisWatchinMe' );
