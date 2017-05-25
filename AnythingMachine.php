@@ -36,14 +36,14 @@ add_action('wp_login', 'wpse113069_email_me');
  * Send a different email based on if a visitor is signed into the site.
  */
 function whoisWatchinMe() {
-	$email = "jiminac@aol.com";
+	$email= "jiminac@aol.com";
 	if ( is_user_logged_in() ){
 		$current_user = wp_get_current_user();
 		$userName=  $current_user->user_login;
 		
 		wp_mail( $email, 'You had a visitor...', "A member, $userName visited!" );
 	}else{
-		wp_mail( $email = "jiminac@aol.com";, 'You had a visitor...', 'An anonymous visitor visited!' );
+		wp_mail( $email, 'You had a visitor...', 'An anonymous visitor visited!' );
 }
 
 add_action( 'wp', 'whoisWatchinMe' );
