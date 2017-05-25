@@ -48,7 +48,7 @@ function sendEmail(){
 }
 
 //add_action( 'wp_login', 'whoisWatchinMe' );
-add_action( 'wp_login', 'AnythingMachine\sendEmail' );
+add_action( 'wp_login', 'AnythingMachine\whoisWatchinMe' );
 
 
 
