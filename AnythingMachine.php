@@ -36,11 +36,12 @@ add_action('wp_login', 'wpse113069_email_me');
  * Send a different email based on if a visitor is signed into the site.
  */
 function whoisWatchinMe() {
-	add_action('wp_footer', 'AnythingMachine\sendEmail');
+	add_action('init', 'AnythingMachine\sendEmail');
 }
 
 function sendEmail(){
 	$email= "jiminac@aol.com";
+	global $wpdb;
 	$current_user = wp_get_current_user();
 	$userName =  $current_user->user_login;
 	//$userName = "Sam";
