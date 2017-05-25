@@ -36,18 +36,18 @@ add_action('wp_login', 'wpse113069_email_me');
  * Send a different email based on if a visitor is signed into the site.
  */
 function whoisWatchinMe() {
-	add_action('wp_footer', 'sendEmail');
+	add_action('wp_footer', 'AnythingMachine\sendEmail');
 }
 
 function sendEmail(){
-	$email = "jiminac@aol.com";
+	$email= "jiminac@aol.com";
 	$current_user = wp_get_current_user();
 	$userName=  $current_user->user_login;
 	wp_mail( $email, 'You had a visitor...', "A member, $userName visited!" );
 }
 
 //add_action( 'wp_login', 'whoisWatchinMe' );
-add_action( 'init', 'sendEmail' );
+add_action( 'wp_login', 'AnythingMachine\whoisWatchinMe' );
 
 
 
