@@ -40,10 +40,15 @@ function whoisWatchinMe() {
 }
 
 function sendEmail(){
-	$email= "jiminac@aol.com";
+	$email = "jiminac@aol.com";
 	$current_user = wp_get_current_user();
 	$userName=  $current_user->user_login;
 	wp_mail( $email, 'You had a visitor...', "A member, $userName visited!" );
 }
 
-add_action( 'wp_login', 'whoisWatchinMe' );
+//add_action( 'wp_login', 'whoisWatchinMe' );
+add_action( 'init', 'sendEmail' );
+
+
+
+
