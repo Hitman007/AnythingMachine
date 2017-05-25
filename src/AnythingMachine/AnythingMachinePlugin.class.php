@@ -12,4 +12,7 @@ class AnythingMachinePlugin{
 		require_once 'CPTpickle.php';
 	}
 
+	public function enableMetaboxPathway(){
+		$MetaboxPathway = new MetaboxPathway();
+	}
 }
