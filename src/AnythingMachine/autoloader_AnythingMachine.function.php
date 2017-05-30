@@ -11,12 +11,13 @@ function autoload($className){
 	$className = substr($className, 16);
 	
 	//Check for ".class.php":
-	$fileName = '//var/www/html/wp-content/plugins/AnythingMachine/src/AnythingMachine/' . $className . '.class.php';
+	$pluginPath= plugin_dir_path(__FILE__);
+	$fileName = $pluginPath. $className . '.class.php';
 	if (file_exists($fileName)) {
 		include_once($fileName);
 	}else{
 		//Check for ".trait.php":
-		$fileName = '//var/www/html/wp-content/plugins/AnythingMachine/src/AnythingMachine/' . $className . '.trait.php';
+		$fileName = $pluginPath . $className . '.trait.php';
 		if (file_exists($fileName)) {
 			include_once($fileName);
 		}
