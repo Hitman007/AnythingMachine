@@ -13,6 +13,6 @@ class AnythingMachinePlugin{
 	}
 
 	public function enableMetaboxPathway(){
-		//$MetaboxPathway = new MetaboxPathway();
+		$MetaboxPathway = new MetaboxPathway();
 	}
 }
