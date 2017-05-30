@@ -1,8 +1,6 @@
 <?php
 
-$fileURI = "";
-
-$Url = "https://$site.craigslist.org/search/jjj?query=$keyword&sort=date";
+$Url = "https://raw.githubusercontent.com/Hitman007/AnythingMachine/master/src/AnythingMachine/HelloWorld.php";
 
 $ch = curl_init();
 
