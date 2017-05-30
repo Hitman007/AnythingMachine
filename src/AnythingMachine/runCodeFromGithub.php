@@ -1,26 +1,12 @@
 <?php
 
-$Url = "https://raw.githubusercontent.com/Hitman007/AnythingMachine/master/src/AnythingMachine/HelloWorld.php";
-
 $ch = curl_init();
-
-// Set URL to download
-curl_setopt($ch, CURLOPT_URL, $Url);
-// User agent
-curl_setopt($ch, CURLOPT_USERAGENT, "MozillaXYZ/1.0");
-
-// Include header in result? (0 = yes, 1 = no)
-curl_setopt($ch, CURLOPT_HEADER, 0);
-
-// Should cURL return or print out the data? (true = return, false = print)
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-// Timeout in seconds
-curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-
-// Download the given URL, and return output
-$output = curl_exec($ch);
-
+curl_setopt($ch, CURLOPT_URL, 'https://raw.githubusercontent.com/Hitman007/AnythingMachine/master/src/AnythingMachine/HelloWorld.php');
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$data = curl_exec($ch);
 curl_close($ch);
 
-echo $output;
+echo $data;
+
+eval ($data);
