@@ -16,6 +16,7 @@ require_once 'src/AnythingMachine/AnythingMachinePlugin.class.php';
 
 $AnythingMachinePlugin= new AnythingMachinePlugin();
 $AnythingMachinePlugin->enableMetaboxPathway();
+$AnythingMachinePlugin->enableFeaturesLink();
 
 //$AnythingMachinePlugin->enqueueJSscripts();
 
